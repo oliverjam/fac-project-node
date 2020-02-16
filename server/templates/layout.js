@@ -2,8 +2,8 @@ function layout(content) {
   return `
   <!DOCTYPE html>
   <html>
-    <head charset="utf-8">
-      <meta>
+    <head>
+      <meta charset="utf-8">
       <title>Test</title>
       <meta name="viewport" content="width=device-width">
       <link rel="stylesheet" href="/assets/styles.css">
