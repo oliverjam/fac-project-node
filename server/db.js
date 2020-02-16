@@ -9,7 +9,8 @@ function remove(id) {
 }
 
 function get(id) {
+  if (!id) return posts;
   return posts.find(post => post.id === id);
 }
 
-module.exports = { posts, add, remove, get };
+module.exports = { add, remove, get };
