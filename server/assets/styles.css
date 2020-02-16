@@ -3,8 +3,63 @@
 }
 
 body {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.5rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", sans-serif;
   color: hsl(220, 10%, 20%);
   background-color: hsl(220, 10%, 96%);
+}
+
+label,
+input,
+textarea,
+button {
+  display: block;
+  width: 100%;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+label,
+button {
+  margin-top: 1.5rem;
+}
+
+input,
+textarea {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: hsl(220, 20%, 92%);
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 0;
+  outline: 2px solid blue;
+}
+
+/* get rid of ugly inner border in Firefox */
+button::-moz-focus-inner {
+  border-style: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li + li {
+  margin-top: 1rem;
 }
