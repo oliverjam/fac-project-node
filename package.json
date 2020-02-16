@@ -1,0 +1,23 @@
+{
+  "name": "week-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "format": "prettier --write '**/*.js'"
+  },
+  "keywords": [],
+  "author": "Oliver Phillips <hello@oliverjam.es> (https://oliverjam.es/)",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  },
+  "prettier": {
+    "trailingComma": "es5"
+  }
+}
