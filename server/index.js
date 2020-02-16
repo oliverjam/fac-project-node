@@ -2,13 +2,13 @@ const { createServer } = require("http");
 const handlers = require("./handlers");
 
 const server = createServer((request, response) => {
-  switch (request.url) {
-    case "/":
-      return handlers.home(request, response);
-    case "/create-post":
-      return handlers.createPost(request, response);
-    default:
-      return handlers.notFound(request, response);
+  const url = request.url;
+  if (url === "/") {
+    handlers.home(request, response);
+  } else if (url === "/create-post") {
+    handlers.createPost(request, response);
+  } else {
+    handlers.notFound(request, response);
   }
 });
 
