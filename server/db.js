@@ -1,12 +1,15 @@
 let posts = [];
 
 function add(post) {
-  const id = Date.now();
-  posts.push({ ...post, id });
+  posts.push(post);
 }
 
 function remove(id) {
   posts = posts.filter(post => post.id !== id);
 }
 
-module.exports = { posts, add, remove };
+function get(id) {
+  return posts.find(post => post.id === id);
+}
+
+module.exports = { posts, add, remove, get };
