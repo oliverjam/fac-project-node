@@ -11,6 +11,8 @@ const server = createServer((request, response) => {
     handlers.post(request, response);
   } else if (url.startsWith("/remove")) {
     handlers.removePost(request, response);
+  } else if (url.startsWith("/assets")) {
+    handlers.assets(request, response);
   } else {
     handlers.notFound(request, response);
   }

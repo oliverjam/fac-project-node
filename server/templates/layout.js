@@ -6,6 +6,7 @@ function layout(content) {
       <meta>
       <title>Test</title>
       <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="/assets/styles.css">
     </head>
     <body>
       ${content}
