@@ -1,12 +1,12 @@
 const { createServer } = require("http");
+const handlers = require("./handlers");
 
 const server = createServer((request, response) => {
   switch (request.url) {
     case "/":
-      response.end(`<h1>Hello world</h1>`);
-      break;
+      return handlers.home(request, response);
     default:
-      response.end(`<h1>Not found</h1>`);
+      return handlers.notFound(request, response);
   }
 });
 
