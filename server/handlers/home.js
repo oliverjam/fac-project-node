@@ -7,9 +7,9 @@ function home(request, response) {
     <h1>Write post</h1>
     <form action="/create-post" method="POST">
       <label for="title">Title</label>
-      <input id="title" name="title">
+      <input id="title" name="title" required autofocus>
       <label for="body">Body</label>
-      <textarea id="body" name="body" rows="6"></textarea>
+      <textarea id="body" name="body" rows="6" required></textarea>
       <button type="submit">Post</button>
     </form>
     <h2>Posts</h2>
