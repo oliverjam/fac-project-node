@@ -19,6 +19,7 @@ function home(request, response) {
       )}
     </h2>
   `);
+  response.writeHead(200, { "content-type": "text/html" });
   response.end(html);
 }
 

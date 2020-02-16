@@ -5,7 +5,7 @@ function post(request, response) {
   const [, , id] = request.url.split("/");
   const post = db.get(id);
   if (!post) {
-    response.writeHead(404);
+    response.writeHead(404, { "content-type": "text/html" });
     const html = layout(`<h1>Post not found</h1>`);
     response.end(html);
   }
@@ -14,6 +14,7 @@ function post(request, response) {
     <a href="/remove/${post.id}">Delete post</a>
     <p>${post.body}</p>
   `);
+  response.writeHead(200, { "content-type": "text/html" });
   response.end(html);
 }
 
