@@ -5,6 +5,8 @@ const server = createServer((request, response) => {
   switch (request.url) {
     case "/":
       return handlers.home(request, response);
+    case "/create-post":
+      return handlers.createPost(request, response);
     default:
       return handlers.notFound(request, response);
   }
