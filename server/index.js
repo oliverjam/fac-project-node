@@ -7,8 +7,10 @@ const server = createServer((request, response) => {
     handlers.home(request, response);
   } else if (url === "/create-post") {
     handlers.createPost(request, response);
-  } else if (url.includes("/post")) {
+  } else if (url.startsWith("/post")) {
     handlers.post(request, response);
+  } else if (url.startsWith("/remove")) {
+    handlers.removePost(request, response);
   } else {
     handlers.notFound(request, response);
   }

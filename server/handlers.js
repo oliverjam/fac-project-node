@@ -32,7 +32,7 @@ function createPost(request, response) {
     const data = Object.fromEntries(parsedBody);
     const titleSlug = data.title.replace(/\W/g, "-");
     db.add({ ...data, id: titleSlug });
-    response.writeHead(302, { Location: `post/${titleSlug}` });
+    response.writeHead(302, { Location: `/` });
     response.end();
   });
 }
@@ -47,9 +47,17 @@ function post(request, response) {
   }
   const html = layout(`
     <h1>${post.title}</h1>
+    <a href="/remove/${post.id}">Delete post</a>
     <p>${post.body}</p>
   `);
   response.end(html);
+}
+
+function removePost(request, response) {
+  const [, , id] = request.url.split("/");
+  db.remove(id);
+  response.writeHead(302, { Location: `/` });
+  response.end();
 }
 
 function notFound(request, response) {
@@ -58,4 +66,4 @@ function notFound(request, response) {
   response.end(html);
 }
 
-module.exports = { home, createPost, post, notFound };
+module.exports = { home, createPost, post, removePost, notFound };
