@@ -23,16 +23,32 @@ function createPost(request, response) {
   request.on("end", () => {
     const parsedBody = new URLSearchParams(body);
     const data = Object.fromEntries(parsedBody);
-    db.add(data);
     const titleSlug = data.title.replace(/\W/g, "-");
-    response.writeHead(302, { Location: `posts/${titleSlug}` });
+    db.add({ ...data, id: titleSlug });
+    response.writeHead(302, { Location: `post/${titleSlug}` });
     response.end();
   });
 }
 
+function post(request, response) {
+  const [, , id] = request.url.split("/");
+  const post = db.get(id);
+  if (!post) {
+    response.writeHead(404);
+    const html = layout(`<h1>Post not found</h1>`);
+    response.end(html);
+  }
+  const html = layout(`
+    <h1>${post.title}</h1>
+    <p>${post.body}</p>
+  `);
+  response.end(html);
+}
+
 function notFound(request, response) {
+  response.writeHead(404);
   const html = layout(`<h1>Not found</h1>`);
   response.end(html);
 }
 
-module.exports = { home, createPost, notFound };
+module.exports = { home, createPost, post, notFound };
