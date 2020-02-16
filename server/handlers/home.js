@@ -9,14 +9,14 @@ function home(request, response) {
       <label for="title">Title</label>
       <input id="title" name="title">
       <label for="body">Body</label>
-      <textarea id="body" name="body"></textarea>
+      <textarea id="body" name="body" rows="6"></textarea>
       <button type="submit">Post</button>
     </form>
     <h2>Posts</h2>
     <ul>
-      ${posts.map(
-        post => `<li><a href="/post/${post.id}">${post.title}</a></li>`
-      )}
+      ${posts
+        .map(post => `<li><a href="/post/${post.id}">${post.title}</a></li>`)
+        .join("")}
     </h2>
   `);
   response.writeHead(200, { "content-type": "text/html" });
