@@ -2,6 +2,8 @@ const layout = require("../templates/layout");
 const db = require("../db");
 
 function post(request, response) {
+  // splits "/post/hello-world" into ["", "post", "hello-world"]
+  // then assigns the 3rd thing in the array to `id`
   const [, , id] = request.url.split("/");
   const post = db.get(id);
   if (!post) {
