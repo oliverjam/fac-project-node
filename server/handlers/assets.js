@@ -21,7 +21,11 @@ function assets(request, response) {
   fs.readFile(path.join(__dirname, "..", "assets", fileName))
     // if successful readFile resolves with the string contents of the file
     .then(content => {
-      response.writeHead(200, { "content-type": type });
+      const fileSizeInBytes = Buffer.byteLength(content);
+      response.writeHead(200, {
+        "content-type": type,
+        "content-length": fileSizeInBytes,
+      });
       response.end(content);
     })
     .catch(error => {
