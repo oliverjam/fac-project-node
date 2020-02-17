@@ -2,6 +2,8 @@
 
 A blogging service built with Node as an example project for Founders & Coders.
 
+![](https://user-images.githubusercontent.com/9408641/74652591-45fa9280-517e-11ea-90b9-dd22c873555e.gif)
+
 ## Local setup
 
 You need [git](https://git-scm.com/), [Node](https://nodejs.org/en/) and [npm](npmjs.com/) (should come with Node) installed before you start.
