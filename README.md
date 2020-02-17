@@ -47,3 +47,7 @@ The handler functions live in `server/handlers/`. Each function handles a reques
 Submitted posts are kept in an array in memory. This means every time the server restarts they will be lost. In reality you'd use a database to save this information, but we're learning about them next week. A good stretch goal would be to save this array to a JSON file using `fs.writeFile`.
 
 The `server/db.js` file keeps track of the posts array and exports functions for getting, creating and deleting posts.
+
+### Layout
+
+Any route that renders HTML uses `server/layout.js` to wrap its custom HTML in the generic stuff every page needs (`<head>`, `<body>`, CSS etc).
