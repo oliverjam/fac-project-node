@@ -13,7 +13,7 @@ function post(request, response) {
   }
   const html = layout(`
     <h1>${post.title}</h1>
-    <a href="/remove/${post.id}">Delete post</a>
+    <a href="/remove/${post.id}" class="button-link">Delete post</a>
     <p>${post.body}</p>
   `);
   response.writeHead(200, { "content-type": "text/html" });
