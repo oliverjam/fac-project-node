@@ -7,7 +7,8 @@
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
     "lint": "eslint .",
-    "format": "prettier --write '**/*.js'"
+    "format": "prettier --write '**/*.js'",
+    "test": "tape tests/**/*.js | tap-spec"
   },
   "keywords": [],
   "author": "Oliver Phillips <hello@oliverjam.es> (https://oliverjam.es/)",
@@ -15,7 +16,10 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "nodemon": "^2.0.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.13.0"
   },
   "prettier": {
     "trailingComma": "es5"
