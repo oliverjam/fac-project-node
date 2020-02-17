@@ -1,6 +1,11 @@
 const db = require("../db");
 
 function createPost(request, response) {
+  // this handler only supports POST requests
+  if (request.method !== "POST") {
+    response.writeHead(405);
+    response.end("Method not allowed");
+  }
   let body = "";
   request.on("data", chunk => {
     body += chunk;
