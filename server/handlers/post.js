@@ -9,7 +9,7 @@ function post(request, response) {
   if (!post) {
     response.writeHead(404, { "content-type": "text/html" });
     const html = layout(`<h1>Post not found</h1>`);
-    response.end(html);
+    return response.end(html);
   }
   const html = layout(`
     <h1>${post.title}</h1>
