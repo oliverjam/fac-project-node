@@ -24,6 +24,10 @@ You need [git](https://git-scm.com/), [Node](https://nodejs.org/en/) and [npm](n
    ```sh
    npm run dev
    ```
+1. Run the tests
+   ```sh
+   npm test
+   ```
 
 ## Project structure
 
@@ -53,3 +57,7 @@ The `server/db.js` file keeps track of the posts array and exports functions for
 ### Layout
 
 Any route that renders HTML uses `server/layout.js` to wrap its custom HTML in the generic stuff every page needs (`<head>`, `<body>`, CSS etc).
+
+## Testing
+
+All routes are tested using Supertest. `tests/router.test.js` contains a single Tape test for each route.
