@@ -1,4 +1,4 @@
-const layout = require("../templates/layout");
+const layout = require("../layout");
 
 function notFound(request, response) {
   const html = layout(`<h1>Not found</h1>`);

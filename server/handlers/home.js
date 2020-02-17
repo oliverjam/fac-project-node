@@ -1,4 +1,4 @@
-const layout = require("../templates/layout");
+const layout = require("../layout");
 const db = require("../db");
 
 function home(request, response) {
