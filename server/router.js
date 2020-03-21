@@ -6,6 +6,8 @@ function router(request, response) {
     handlers.home(request, response);
   } else if (url === "/create-post") {
     handlers.createPost(request, response);
+  } else if (url === "/posts") {
+    handlers.posts(request, response);
   } else if (url.startsWith("/post")) {
     handlers.post(request, response);
   } else if (url.startsWith("/remove")) {

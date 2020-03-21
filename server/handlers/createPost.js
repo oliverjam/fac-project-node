@@ -22,7 +22,7 @@ function createPost(request, response) {
     // save the submitted post, plus the ID
     db.add({ ...data, id: titleSlug });
     // redirect to the homepage, which should show the new post
-    response.writeHead(302, { Location: `/` });
+    response.writeHead(302, { Location: `/posts` });
     response.end();
   });
 }

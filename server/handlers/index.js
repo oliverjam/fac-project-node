@@ -1,8 +1,15 @@
 const home = require("./home");
 const createPost = require("./createPost");
-const post = require("./post");
+const posts = require("./posts");
 const removePost = require("./removePost");
 const notFound = require("./notFound");
 const assets = require("./assets");
 
-module.exports = { home, createPost, post, removePost, notFound, assets };
+module.exports = {
+  home,
+  createPost,
+  posts,
+  removePost,
+  notFound,
+  assets,
+};

@@ -42,8 +42,8 @@ The handler functions live in `server/handlers/`. Each function handles a reques
 | Route          | File            | Description                                                                                                                                                              |
 | -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `/`            | `home.js`       | Renders the form for adding a post, and a list of existing posts                                                                                                         |
-| `/create-post` | `createPost.js` | Receives the form submission for a new post, saves it and redirects back to `/`                                                                                          |
-| `/post/:id`    | `post.js`       | Renders the post matching the ID in the URL                                                                                                                              |
+| `/create-post` | `createPost.js` | Receives the form submission for a new post, saves it and redirects to `/posts`                                                                                          |
+| `/posts`       | `posts.js`      | Renders all of the posts, with corresponding delete buttons URL                                                                                                          |
 | `/remove/:id`  | `removePost.js` | Deletes the post matching the ID in the URL                                                                                                                              |
 | `/assets/*`    | `assets.js`     | Responds with any file in `server/assets/`, with [content-type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) matching the file extension |
 | `/*`           | `notFound.js`   | Renders "Not found" for any route not matching a handler                                                                                                                 |
